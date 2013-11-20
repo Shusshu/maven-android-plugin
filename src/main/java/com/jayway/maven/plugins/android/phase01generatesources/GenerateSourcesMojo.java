@@ -566,6 +566,8 @@ public class GenerateSourcesMojo extends AbstractAndroidMojo
             commands.add( "-G" );
             commands.add( proguardFile.getAbsolutePath() );
         }
+        commands.add( "--output-text-symbols" );
+        commands.add( genDirectory.getAbsolutePath() );
         getLog().info( getAndroidSdk().getAaptPath() + " " + commands.toString() );
         try
         {
