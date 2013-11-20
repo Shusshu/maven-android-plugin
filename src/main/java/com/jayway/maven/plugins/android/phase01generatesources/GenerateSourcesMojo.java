@@ -710,7 +710,9 @@ public class GenerateSourcesMojo extends AbstractAndroidMojo
                     // resources anywhere.
                     if ( fullSymbolValues == null )
                     {
-                        fullSymbolValues = new SymbolLoader( rFile, null );
+                        fullSymbolValues = 
+                           new SymbolLoader( new File( genDirectory.getAbsolutePath()
+                                    + File.separator + "R.txt" ), null );
 
                         fullSymbolValues.load();
                     }
